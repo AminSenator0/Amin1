@@ -1,16 +1,16 @@
 import { Logo } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Amin",
+  lastName: "Senator",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  role: "Developer",
+  avatar: "/images/projects/project-01/12.gif",
+  email: "aminmohamadbiabani713@gmail.com",
+  location: "Asia/Tehran", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Persian"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -28,14 +28,14 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    name: "Telegram",
+    icon: "telegram",
+    link: "https://t.me/Amin_mp3",
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    name: "Discord",
+    icon: "discord",
+    link: "https://discord.com/users/852854475080073267",
   },
   {
     name: "X",
@@ -55,16 +55,15 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Say Hi</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Recent project: <strong className="ml-4">WebPoosh</strong></>,
+    href: "https://www.webpoosh.com/",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon={false} style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+     I am Amin, a design engineer at National Skill University, where I work intuitively on user experiences after hours building my own projects.
     </>
   ),
 };
@@ -83,41 +82,34 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/amin-senator",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Amin is a design engineer from Rasht with a passion for transforming complex challenges into simple and beautiful design solutions. His work encompasses digital interfaces, interactive experiences, and the convergence of design and technology.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Technical skills",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Html/Css",
+        timeframe: "2020 - 2021",
+        role: "Senior Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            With HTML and CSS, you can build a whole world from a blank page. 🌍💻
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
+            src: "/images/projects/project-01/html-css-750x375.jpg",
             alt: "Once UI Project",
             width: 16,
             height: 9,
@@ -125,29 +117,50 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "javascript",
+        timeframe: "2022 - 2023",
+        role: "Senior Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+           JavaScript turns ideas into interaction — it's the magic behind the web. ✨💡
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/projects/project-01/jsheader.png",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Discord",
+        timeframe: "2021 - 2025",
+        role: "Senior Developer",
+        achievements: [
+          <>
+With Discord.js, you're not just building bots — you're creating communities, one command at a time. 🤖💬
+</>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/background.png",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
     title: "Studies",
+    role: "Lead Designer",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "University of National Skill",
         description: <>Studied software engineering.</>,
       },
       {
@@ -157,7 +170,7 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
