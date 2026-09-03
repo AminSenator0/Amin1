@@ -16,6 +16,8 @@ import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
 import React from "react";
 import { Meta, Schema } from "@/once-ui/modules";
+import { ScrollReveal3D } from "@/components/ScrollReveal3D";
+import { SkillSphere } from "@/components/SkillSphere";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -50,6 +52,7 @@ export default function About() {
       items: about.technical.skills.map((skill) => skill.title),
     },
   ];
+
   return (
     <Column maxWidth="m">
       <Schema
@@ -65,6 +68,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
       {about.tableOfContent.display && (
         <Column
           left="0"
@@ -77,6 +81,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
+
       <Flex fillWidth mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
@@ -118,9 +123,7 @@ export default function About() {
                 fitWidth
                 border="brand-alpha-medium"
                 className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
+                style={{ backdropFilter: "blur(var(--static-space-1))" }}
                 background="brand-alpha-weak"
                 radius="full"
                 padding="4"
@@ -149,29 +152,36 @@ export default function About() {
               {person.role}
             </Text>
             {social.length > 0 && (
-              <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
+              <Flex
+                className={styles.blockAlign}
+                paddingTop="20"
+                paddingBottom="8"
+                gap="8"
+                wrap
+                horizontal="center"
+                fitWidth
+                data-border="rounded"
+              >
                 {social.map(
                   (item) =>
                     item.link && (
-                        <React.Fragment key={item.name}>
-                            <Button
-                                className="s-flex-hide"
-                                key={item.name}
-                                href={item.link}
-                                prefixIcon={item.icon}
-                                label={item.name}
-                                size="s"
-                                variant="secondary"
-                            />
-                            <IconButton
-                                className="s-flex-show"
-                                size="l"
-                                key={`${item.name}-icon`}
-                                href={item.link}
-                                icon={item.icon}
-                                variant="secondary"
-                            />
-                        </React.Fragment>
+                      <React.Fragment key={item.name}>
+                        <Button
+                          className="s-flex-hide"
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          variant="secondary"
+                        />
+                        <IconButton
+                          className="s-flex-show"
+                          size="l"
+                          href={item.link}
+                          icon={item.icon}
+                          variant="secondary"
+                        />
+                      </React.Fragment>
                     ),
                 )}
               </Flex>
@@ -185,7 +195,7 @@ export default function About() {
           )}
 
           {about.work.display && (
-            <>
+            <ScrollReveal3D direction="left">
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
               </Heading>
@@ -221,19 +231,14 @@ export default function About() {
                             key={index}
                             border="neutral-medium"
                             radius="m"
-                            //@ts-ignore
                             minWidth={image.width}
-                            //@ts-ignore
                             height={image.height}
                           >
                             <SmartImage
                               enlarge
                               radius="m"
-                              //@ts-ignore
                               sizes={image.width.toString()}
-                              //@ts-ignore
                               alt={image.alt}
-                              //@ts-ignore
                               src={image.src}
                             />
                           </Flex>
@@ -243,11 +248,36 @@ export default function About() {
                   </Column>
                 ))}
               </Column>
-            </>
+            </ScrollReveal3D>
           )}
 
+          <Column fillWidth gap="24" marginBottom="40" marginTop="xl">
+            <Heading as="h2" variant="display-strong-s" style={{ textAlign: "center" }}>
+              Tech Stack
+            </Heading>
+            <SkillSphere
+              skills={[
+                { name: "React" },
+                { name: "Next.js" },
+                { name: "TypeScript" },
+                { name: "Node.js" },
+                { name: "Three.js" },
+                { name: "Python" },
+                { name: "Tailwind" },
+                { name: "GraphQL" },
+                { name: "Docker" },
+                { name: "AWS" },
+                { name: "Git" },
+                { name: "Figma" },
+                { name: "PostgreSQL" },
+                { name: "Redis" },
+                { name: "Framer Motion" },
+              ]}
+            />
+          </Column>
+
           {about.studies.display && (
-            <>
+            <ScrollReveal3D direction="right">
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
                 {about.studies.title}
               </Heading>
@@ -263,11 +293,11 @@ export default function About() {
                   </Column>
                 ))}
               </Column>
-            </>
+            </ScrollReveal3D>
           )}
 
           {about.technical.display && (
-            <>
+            <ScrollReveal3D direction="left">
               <Heading
                 as="h2"
                 id={about.technical.title}
@@ -290,19 +320,14 @@ export default function About() {
                             key={index}
                             border="neutral-medium"
                             radius="m"
-                            //@ts-ignore
                             minWidth={image.width}
-                            //@ts-ignore
                             height={image.height}
                           >
                             <SmartImage
                               enlarge
                               radius="m"
-                              //@ts-ignore
                               sizes={image.width.toString()}
-                              //@ts-ignore
                               alt={image.alt}
-                              //@ts-ignore
                               src={image.src}
                             />
                           </Flex>
@@ -312,7 +337,7 @@ export default function About() {
                   </Column>
                 ))}
               </Column>
-            </>
+            </ScrollReveal3D>
           )}
         </Column>
       </Flex>

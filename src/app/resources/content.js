@@ -55,7 +55,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Say Hi</>,
+  headline: "Say Hi",
   featured: {
     display: true,
     title: <>Recent project: <strong className="ml-4">WebPoosh</strong></>,
@@ -95,7 +95,7 @@ const about = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Work Experience",
     experiences: [
       {
         company: "Html/Css",
@@ -170,7 +170,7 @@ With Discord.js, you're not just building bots — you're creating communities, 
     ],
   },
   technical: {
-    display: false, // set to false to hide this section
+    display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {

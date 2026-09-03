@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Column, Flex, Text } from "@/once-ui/components";
+import { useLenis } from "@/components/SmoothScroll";
 import styles from "./about.module.scss";
 
 interface TableOfContentsProps {
@@ -19,16 +20,18 @@ interface TableOfContentsProps {
 }
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+  const lenis = useLenis();
+
   const scrollTo = (id: string, offset: number) => {
     const element = document.getElementById(id);
-    if (element) {
+    if (!element) return;
+
+    if (lenis) {
+      lenis.scrollTo(element, { offset: -offset });
+    } else {
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
